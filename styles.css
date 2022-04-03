@@ -1,0 +1,279 @@
+* {
+  --color-primary: #00bcd4;
+  --color-bcg-button: #00bcd4;
+  --color-bcg-button-hover: #00bcd4;
+  --color-bcg-button-active: #00bcd4;
+  --color-bcg-button-disabled: #00bcd4;
+  --color-button-text: black;
+  --bckg-left: #f1f1f1;
+  --bckg-right: #00bcd4;
+  font-family: "product_sansregular";
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+html {
+  overflow: hidden;
+}
+i {
+  font-size: 2rem;
+  padding: 0px;
+}
+i:hover {
+  color: red;
+}
+#container {
+  height: 100vh;
+  width: 100vw;
+  display: inline;
+}
+#left {
+  min-width: 300px;
+  height: 100vh;
+  width: 20vw;
+  float: left;
+  background-color: var(--bckg-left);
+  border-right: solid 1px var(--color-button-text);
+}
+
+#right {
+  float: right;
+  height: 100vh;
+  width: 80vw;
+}
+#headerSteps,
+#headerElements,
+#headerSettings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: solid 1px var(--color-button-text);
+  height: 50px;
+  font-size: 1.3rem;
+}
+#headerElements {
+  border-top: solid 1px var(--color-button-text);
+}
+#headerSettings {
+  border-top: solid 1px var(--color-button-text);
+  border-bottom: 0px;
+  justify-content: end;
+}
+#headerSettings i {
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+#addStep {
+  border: solid 1px var(--color-button-text);
+  padding: 10px;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+#addStep:hover {
+  background-color: #a19292;
+}
+#steps {
+  height: 75%;
+  width: 100%;
+}
+#elements {
+  height: 20%;
+}
+#containerElements {
+  height: calc(100% - 50px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/*FORMAS WORKFLOW*/
+.radio {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #555;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.radio div,
+select div {
+  z-index: 100;
+}
+.radio div {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.radio,
+.end,
+.select {
+  cursor: grab;
+}
+
+.radio div p,
+.select div p,
+.end div p {
+  margin: 0px;
+  width: 100%;
+  text-align: center;
+  user-select: none;
+}
+
+.select div p {
+  width: 70px;
+}
+.select div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.select {
+  margin-left: 30px;
+  margin-right: 30px;
+  position: relative;
+  width: 50px;
+  height: 70.711px;
+  background-color: #ffffff;
+  margin-left: 35px;
+  margin-right: 35px;
+  border: 3px solid #555;
+}
+
+.select:before,
+.select:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 49.998px;
+  height: 49.998px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  background-color: inherit;
+  left: 27.2893px;
+}
+
+.select:before {
+  top: 7.16px;
+  left: 21.5px;
+  border-top: 3px solid #555;
+  border-right: 3px solid #555;
+  transform: rotate(45deg);
+}
+
+.select:after {
+  top: 7.16px;
+  left: -28.5px;
+  border-bottom: 3px solid #555;
+  border-left: 3px solid #555;
+  transform: rotate(45deg);
+}
+
+.end {
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 3px solid #555;
+  border-radius: 30px;
+  height: 30px;
+  width: 50px;
+  background-color: rgb(206, 77, 77);
+  color: white;
+}
+/**/
+.inserted {
+  position: absolute;
+}
+
+/*MODAL*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*Accordion*/
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border-bottom: solid 1px black;
+}
+
+.pulseRequired {
+    background: rgb(30,29,83);
+    background: radial-gradient(circle, rgba(30,29,83,0.23012955182072825) 85%, rgba(0,212,255,1) 100%);
+}

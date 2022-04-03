@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editor Workflows</title>
+    <!--Bootrstap-->
+    <script src="./js/Bootstrap/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./js/Bootstrap/bootstrap.min.css" />
+    <!-- Bootstrap icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./htmlTemplates.js"></script>
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="left">
+        <div id="steps">
+          <div id="headerSteps">
+            <h1>Pasos</h1>
+            <i id="addStep" class="bi bi-plus" width="32" height="32"></i>
+          </div>
+          <div id="containerStep"></div>
+        </div>
+        <div id="elements">
+          <div id="headerElements">
+            <h1>Elementos</h1>
+          </div>
+          <div id="containerElements">
+            <div id="radioFather" class="radio" draggable="true">
+              <div>
+                <p>Sí / No</p>
+              </div>
+            </div>
+            <div id="selectFather" class="select" draggable="true">
+              <div>
+                <p>Multiples opciones</p>
+              </div>
+            </div>
+            <div id="endFather" class="end" draggable="true">
+              <div>
+                <p>FIN</p>
+              </div>
+            </div>
+            <div class="reapertura"></div>
+          </div>
+        </div>
+        <div id="settings">
+          <div id="headerSettings">
+            <p>José Fernandez v.0.1</p>
+            <i class="bi bi-upload"></i>
+            <i class="bi bi-download" alt="Guardar"></i>
+            <i class="bi bi-printer"></i>
+            <i class="bi bi-info-circle"></i>
+          </div>
+        </div>
+      </div>
+      <div id="right"></div>
+    </div>
+    <!-- Modales -->
+    <div id="modalStep" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Añadir Step</h1>
+        <div class="form-group">
+          <label for="stepId">ID:</label>
+          <input type="text" class="form-control" id="stepId" />
+        </div>
+        <div class="form-group">
+          <label for="stepTag">Tag:</label>
+          <input type="text" class="form-control" id="stepTag" />
+        </div>
+        <div class="form-group">
+          <label for="stepEtiqueta">Etiqueta (Como se muestra en el frontal):</label>
+          <input type="text" class="form-control" id="stepEtiqueta" />
+        </div>
+        </br>
+        <button id="confirmAddStep" type="button" class="btn btn-primary">Añadir step</button>
+      </div>
+    </div>
+    <div id="modalSubStep" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h1>Añadir SubStep</h1>
+          <div class="form-group">
+            <label for="stepId">ID:</label>
+            <input type="text" class="form-control" id="stepId" />
+          </div>
+          <div class="form-group">
+            <label for="stepElastic">Elastic:</label>
+            <input type="text" class="form-control" id="stepElastic" />
+          </div>
+          <div class="form-group">
+            <label for="stepTypification">Tipificacion:</label>
+            <input type="text" class="form-control" id="stepTypification" />
+          </div>
+          <div class="form-group">
+            <label for="stepTypification">Etiqueta (Como se muestra en el frontal):</label>
+            <input type="text" class="form-control" id="stepTypification" />
+          </div>
+          <div class="form-group">
+            <label for="stepTypification">Step:</label>
+            <input disabled type="text" class="form-control" id="stepTypification" />
+          </div>
+          </br>
+          <button id="confirmAddStep" type="button" class="btn btn-primary">Añadir step</button>
+        </div>
+      </div>
+  </body>
+</html>
