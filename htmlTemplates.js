@@ -1,10 +1,10 @@
 const parser = new DOMParser();
-
+let idCounter = 0;
 export function createAccordionStep(id, label) {
   return parser.parseFromString(
     `
     <div>
-    <button class="accordion" id="step${id}">${label}</button>
+    <button class="accordion" id="step__${id}">${label}</button>
         <div class="panel">
             <p>Este es el paso seleccionado</p>
         </div>
@@ -13,11 +13,10 @@ export function createAccordionStep(id, label) {
   ).body.firstChild;
 }
 
-export function RadioElement(event) {
+export function RadioElement(event, id = idCounter) {
+  idCounter++;
   return parser.parseFromString(
-    `<div class="radio inserted" draggable="true" style="left:${
-      event.clientX - event.target.offsetLeft
-    }px; top:${event.clientY}px">
+    `<div id="${id}" class="radio inserted" draggable="true" style="left:${event.pageX}px; top:${event.pageY}px">
     <div>
       <p>Sí / No</p>
     </div>
@@ -26,11 +25,10 @@ export function RadioElement(event) {
   ).body.firstChild;
 }
 
-export function SelectElement(event) {
+export function SelectElement(event, id = idCounter) {
+  idCounter++;
   return parser.parseFromString(
-    `<div class="select inserted" draggable="true" style="left:${
-      event.clientX - event.target.offsetLeft + 50
-    }px; top:${event.clientY - 30}px">
+    `<div id="${id}" class="select inserted" draggable="true" style="left:${event.pageX}px; top:${event.pageY}px">
     <div>
       <p>Multiples opciones</p>
     </div>
@@ -39,15 +37,30 @@ export function SelectElement(event) {
   ).body.firstChild;
 }
 
-export function endElement(event) {
+export function endElement(event, id = idCounter) {
+  idCounter++;
   return parser.parseFromString(
-    `<div class="end inserted" draggable="true" style="left:${
-      event.clientX - event.target.offsetLeft + 200
-    }px; top:${event.clientY - 15}px">
+    `<div id="${id}" class="end inserted" draggable="true" style="left:${
+      event.pageX
+    }px; top:${event.pageY - 15}px">
     <div>
       <p>FIN</p>
     </div>
   </div>`,
+    "text/html"
+  ).body.firstChild;
+}
+
+export function subStepElement(event, id = idCounter) {
+  idCounter++;
+  return parser.parseFromString(
+    `<div id="${id}" class="subStep inserted" draggable="true" style="left:${
+      event.pageX
+    }px; top:${event.pageY - 15}px">
+  <div>
+    <p>FIN</p>
+  </div>
+</div>`,
     "text/html"
   ).body.firstChild;
 }

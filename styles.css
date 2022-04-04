@@ -94,6 +94,14 @@ i:hover {
 }
 
 /*FORMAS WORKFLOW*/
+.subStep {
+  width: 100px;
+  height: 50px;
+  border: 3px solid #555;
+  background-color: #00bcd4;
+  color: white;
+}
+
 .radio {
   margin-left: 20px;
   margin-right: 20px;
@@ -123,13 +131,15 @@ select div {
 
 .radio,
 .end,
-.select {
+.select,
+.subStep {
   cursor: grab;
 }
 
 .radio div p,
 .select div p,
-.end div p {
+.end div p,
+.subStep div p {
   margin: 0px;
   width: 100%;
   text-align: center;
@@ -274,6 +284,8 @@ select div {
 }
 
 .pulseRequired {
-    background: rgb(30,29,83);
     background: radial-gradient(circle, rgba(30,29,83,0.23012955182072825) 85%, rgba(0,212,255,1) 100%);
+}
+.jtk-connector path{
+  stroke: red;
 }

@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="./styles.css" />
     <script type="module" src="./htmlTemplates.js"></script>
     <script type="module" src="./script.js"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.6/js/jsplumb.min.js "></script>
   </head>
   <body>
     <div id="container">
@@ -52,7 +56,7 @@
         </div>
         <div id="settings">
           <div id="headerSettings">
-            <p>José Fernandez v.0.1</p>
+            <p>José Fernandez v.0.2</p>
             <i class="bi bi-upload"></i>
             <i class="bi bi-download" alt="Guardar"></i>
             <i class="bi bi-printer"></i>
@@ -89,26 +93,26 @@
           <h1>Añadir SubStep</h1>
           <div class="form-group">
             <label for="stepId">ID:</label>
-            <input type="text" class="form-control" id="stepId" />
+            <input type="text" class="form-control" id="subStepId" />
           </div>
           <div class="form-group">
             <label for="stepElastic">Elastic:</label>
-            <input type="text" class="form-control" id="stepElastic" />
+            <input type="text" class="form-control" id="subStepElastic" />
           </div>
           <div class="form-group">
             <label for="stepTypification">Tipificacion:</label>
-            <input type="text" class="form-control" id="stepTypification" />
+            <input type="text" class="form-control" id="subStepTypification" />
           </div>
           <div class="form-group">
             <label for="stepTypification">Etiqueta (Como se muestra en el frontal):</label>
-            <input type="text" class="form-control" id="stepTypification" />
+            <input type="text" class="form-control" id="subStepTag" />
           </div>
           <div class="form-group">
             <label for="stepTypification">Step:</label>
-            <input disabled type="text" class="form-control" id="stepTypification" />
+            <input disabled type="text" class="form-control" id="subStepStep" />
           </div>
           </br>
-          <button id="confirmAddStep" type="button" class="btn btn-primary">Añadir step</button>
+          <button id="confirmAddSubStep" type="button" class="btn btn-primary">Añadir Substep</button>
         </div>
       </div>
   </body>
